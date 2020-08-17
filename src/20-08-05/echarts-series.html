@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Series</title>
+    <style>
+        #chart {
+            width: 800px;
+            height: 800px;
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@4.8.0/dist/echarts.js"></script>
+</head>
+<body>
+    <div id="chart"></div>
+    <script>
+        let chartDom = document.getElementById('chart')
+        let chart = echarts.init(chartDom)
+        chart.setOption({
+            title: {
+                text: '多系列练习',
+                subtitle: '慕课网学习网站不错的'
+            },
+            yAxis: {
+           
+            },
+            xAxis: {
+                data: [
+                    '第一季度',
+                    '第二季度',
+                    '第三季度',
+                    '第四季度',
+                ]
+            },
+            series: [
+                {
+                    type: 'pie',
+                    data: [
+                        {name: 'XY', value: 120},
+                        {name: 'WZ', value: 240},
+                        {name: 'MM', value: 150}
+                    ],
+                    radius: '20%',
+                    center: ['75%', 120]
+                },
+                {
+                    type: 'bar',
+                    data: [
+                        120, 140, 150, 170
+                    ]
+                },
+                {
+                    type: 'line',
+                    data: [
+                        200, 250, 100, 120
+                    ]
+                }
+            ]
+        })
+    </script>
+</body>
+</html>
